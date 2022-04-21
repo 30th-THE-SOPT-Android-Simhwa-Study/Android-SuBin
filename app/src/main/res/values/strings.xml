@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">AndroidStudy</string>
+    <string name="sopt_title">SOPT</string>
+    <string name="email_input">이메일</string>
+    <string name="email_detail">이메일을 정확하게 입력해주세요.</string>
+    <string name="password_input">비밀번호</string>
+    <string name="password_detail">8자리 로그인상의 영문자, 숫자, 특수 문자 조합으로 입력해주세요.</string>
+    <string name="sign_in">로그인</string>
 </resources>
