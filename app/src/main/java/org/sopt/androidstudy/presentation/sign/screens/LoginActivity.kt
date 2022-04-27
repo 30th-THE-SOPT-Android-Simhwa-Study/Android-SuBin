@@ -25,9 +25,9 @@ class LoginActivity : AppCompatActivity(), LifecycleOwner {
     }
 
     private fun goToHome() {
-        viewModel.getSuccess().observe(this) { isSuceess ->
+        viewModel.getSuccess().observe(this) {
             Intent(this, HomeActivity::class.java).run {
-                putExtra("userEmail", viewModel.getUserEmail().value)
+                putExtra("userInfo", viewModel.getUserEmail().value)
                 startActivity(this)
                 finish()
             }
