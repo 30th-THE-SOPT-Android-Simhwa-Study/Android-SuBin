@@ -19,4 +19,8 @@ class LoginActivity : AppCompatActivity(), LifecycleOwner {
         binding.viewModel = viewModel
         binding.lifecycleOwner = this@LoginActivity
     }
+
+//    private fun intentHome(){
+//        viewModel.getSuccess().observe(this){isS}
+//    }
 }

@@ -13,6 +13,7 @@ class SignViewModel() : ViewModel() {
     private val isEnabledButton = MediatorLiveData<Boolean>()
     private val isVaildEmail = MutableLiveData<Boolean>()
     private val isVaildPassword = MutableLiveData<Boolean>()
+    private val isSuccess = MutableLiveData<Boolean>()
 
     init {
         initEnabledLoginButton()
@@ -61,4 +62,5 @@ class SignViewModel() : ViewModel() {
     fun getVaildEmail(): LiveData<Boolean?> = isVaildEmail
     fun getEnabledButton(): LiveData<Boolean> = isEnabledButton
     fun getVaildPassword(): LiveData<Boolean> = isVaildPassword
+    fun getSuccess(): LiveData<Boolean> = isSuccess
 }
