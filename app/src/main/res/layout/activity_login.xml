@@ -5,7 +5,9 @@
     tools:context=".presentation.sign.screens.LoginActivity">
 
     <data>
+
         <import type="android.view.View" />
+
         <variable
             name="viewModel"
             type="org.sopt.androidstudy.presentation.sign.viewmodels.SignViewModel" />
@@ -107,6 +109,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:enabled="@{viewModel.enabledButton==false? false:true}"
+            android:onClick="@{() -> viewModel.isSuccess()}"
             android:text="@string/sign_in"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/guide_end"

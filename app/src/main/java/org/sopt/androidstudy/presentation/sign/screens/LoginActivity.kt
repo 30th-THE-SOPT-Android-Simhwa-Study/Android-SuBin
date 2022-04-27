@@ -1,5 +1,6 @@
 package org.sopt.androidstudy.presentation.sign.screens
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.LifecycleOwner
 import org.sopt.androidstudy.R
 import org.sopt.androidstudy.databinding.ActivityLoginBinding
+import org.sopt.androidstudy.presentation.home.screens.HomeActivity
 import org.sopt.androidstudy.presentation.sign.viewmodels.SignViewModel
 
 class LoginActivity : AppCompatActivity(), LifecycleOwner {
@@ -15,12 +17,21 @@ class LoginActivity : AppCompatActivity(), LifecycleOwner {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-       binding = DataBindingUtil.setContentView(this,R.layout.activity_login)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
         binding.viewModel = viewModel
         binding.lifecycleOwner = this@LoginActivity
+
+        goToHome()
     }
 
-//    private fun intentHome(){
-//        viewModel.getSuccess().observe(this){isS}
-//    }
+    private fun goToHome() {
+        viewModel.getSuccess().observe(this) { isSuceess ->
+            Intent(this, HomeActivity::class.java).run {
+                putExtra("userEmail", viewModel.getUserEmail().value)
+                startActivity(this)
+                finish()
+            }
+        }
+    }
 }
+

@@ -57,6 +57,10 @@ class SignViewModel() : ViewModel() {
         return isVaildEmail.value == true && isVaildPassword.value == true
     }
 
+    fun isSuccess() {
+        isSuccess.value = true
+    }
+
     fun getUserEmail(): LiveData<String> = userEmail
     fun getUserPassword(): LiveData<String> = userPassword
     fun getVaildEmail(): LiveData<Boolean?> = isVaildEmail
