@@ -20,9 +20,8 @@ class HomeActivity : AppCompatActivity() {
         intent.getParcelableExtra<UserInfo>("userInfo")?.let { user ->
             viewModel.setUserInfo(user)
         }
-
        /* viewModel 적용 전
-       intent.getParcelableExtra<UserInfo>("userInfo")
+       intent.getParcelableExtra<UserInfo>("userData")
             ?.let { user -> binding.email.text = user.email }*/
     }
 }

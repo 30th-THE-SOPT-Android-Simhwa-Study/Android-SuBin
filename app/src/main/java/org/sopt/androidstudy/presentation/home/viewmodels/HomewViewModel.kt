@@ -9,6 +9,5 @@ class HomeViewModel : ViewModel() {
     fun setUserInfo(userInfo: UserInfo) {
         this.userInfo = userInfo
     }
-
     fun getUserInfo(): UserInfo? = userInfo
 }
