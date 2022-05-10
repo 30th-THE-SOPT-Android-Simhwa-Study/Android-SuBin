@@ -1,7 +1,7 @@
 package org.sopt.androidstudy.presentation.home.viewmodels
 
 import androidx.lifecycle.ViewModel
-import org.sopt.androidstudy.data.model.UserInfo
+import org.sopt.androidstudy.data.models.UserInfo
 
 class HomeViewModel : ViewModel() {
     private var userInfo: UserInfo? = null

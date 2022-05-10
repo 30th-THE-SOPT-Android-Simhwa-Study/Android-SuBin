@@ -1,4 +1,4 @@
-package org.sopt.androidstudy.data.model
+package org.sopt.androidstudy.data.models
 
 import android.os.Parcel
 import android.os.Parcelable
