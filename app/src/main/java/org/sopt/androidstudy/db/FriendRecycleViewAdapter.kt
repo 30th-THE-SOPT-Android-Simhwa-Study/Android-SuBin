@@ -39,13 +39,6 @@ class FriendRecyclerViewAdapter :
         }
     }
 
-    fun remove(position: Int) {
-        val newList = currentList.toMutableList()
-        newList.removeAt(position)
-        submitList(newList)
-    }
-
-
     companion object {
         val DIFFUTIL = object : DiffUtil.ItemCallback<Friend>() {
             override fun areItemsTheSame(
