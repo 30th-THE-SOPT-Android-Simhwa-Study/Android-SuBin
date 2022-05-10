@@ -2,7 +2,7 @@ package org.sopt.androidstudy.db
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import org.sopt.androidstudy.FriendViewModel
+import org.sopt.androidstudy.presentation.friend.viewmodels.FriendViewModel
 
 class FriendViewModelFactory(private val repository: FriendRepository) :
     ViewModelProvider.Factory {
