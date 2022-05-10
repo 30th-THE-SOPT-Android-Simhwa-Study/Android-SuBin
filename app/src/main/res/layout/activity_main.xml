@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="org.sopt.androidstudy.FriendViewModel" />
+            type="org.sopt.androidstudy.presentation.friend.viewmodels.FriendViewModel" />
 
     </data>
 

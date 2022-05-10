@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudy">
         <activity
+            android:name=".presentation.friend.screens.FriendDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.home.screens.HomeActivity"
             android:exported="false" />
         <activity
@@ -17,18 +20,17 @@
             android:exported="true" />
         <activity
             android:name=".presentation.sign.screens.LoginActivity"
-            android:exported="true"
-            android:windowSoftInputMode="adjustResize">
-        </activity>
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

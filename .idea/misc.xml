@@ -7,9 +7,11 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1445" />
         <entry key="app/src/main/res/drawable/selector_button_text_color.xml" value="0.1445" />
         <entry key="app/src/main/res/drawable/shape_rectangle.xml" value="0.1365" />
+        <entry key="app/src/main/res/layout/activity_friend_detail.xml" value="0.22418478260869565" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.112" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.19354095458984377" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.220782470703125" />
+        <entry key="app/src/main/res/layout/list_item.xml" value="0.21467391304347827" />
         <entry key="app/src/main/res/layout/selector_button_color.xml" value="0.23550724637681159" />
       </map>
     </option>

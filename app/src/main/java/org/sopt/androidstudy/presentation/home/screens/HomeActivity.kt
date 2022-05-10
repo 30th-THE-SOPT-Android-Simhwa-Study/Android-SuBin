@@ -5,7 +5,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import org.sopt.androidstudy.R
-import org.sopt.androidstudy.data.model.UserInfo
+import org.sopt.androidstudy.data.models.UserInfo
 import org.sopt.androidstudy.databinding.ActivityHomeBinding
 import org.sopt.androidstudy.presentation.home.viewmodels.HomeViewModel
 

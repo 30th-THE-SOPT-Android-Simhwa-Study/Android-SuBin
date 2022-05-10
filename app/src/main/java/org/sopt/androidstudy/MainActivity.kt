@@ -1,16 +1,16 @@
 package org.sopt.androidstudy
+
 import android.os.Bundle
-import android.util.Log
-import androidx.activity.viewModels
+import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import org.sopt.androidstudy.databinding.ActivityMainBinding
-import org.sopt.androidstudy.db.FriendDatabase
-import org.sopt.androidstudy.db.FriendRepository
-import org.sopt.androidstudy.db.FriendViewModelFactory
+import org.sopt.androidstudy.db.*
+import org.sopt.androidstudy.presentation.friend.viewmodels.FriendViewModel
 
 class MainActivity : AppCompatActivity() {
 
