@@ -14,5 +14,8 @@ data class Friend(
     val name: String,
 
     @ColumnInfo(name = "friend_email")
-    val email: String
+    val email: String,
+
+    @ColumnInfo(name = "friend_mbti")
+    val mbti: String
 )
