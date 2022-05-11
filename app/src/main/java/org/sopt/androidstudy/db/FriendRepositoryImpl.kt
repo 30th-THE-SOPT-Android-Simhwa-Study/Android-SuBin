@@ -5,7 +5,7 @@ import org.sopt.androidstudy.FriendLocalDataSource
 import org.sopt.androidstudy.data.models.types.MBTI
 import org.sopt.androidstudy.data.models.types.MBTIFeatures
 
-abstract class FriendRepositoryImpl(private val friendLocalDataSource: FriendLocalDataSource):
+abstract class FriendRepositoryImpl(val friendLocalDataSource: FriendLocalDataSource):
 
     FriendRepository {
     override fun getAll(): LiveData<List<Friend>> {

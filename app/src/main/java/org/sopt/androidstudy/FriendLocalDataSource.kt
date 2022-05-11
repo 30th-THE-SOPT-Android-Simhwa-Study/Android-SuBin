@@ -6,7 +6,7 @@ import org.sopt.androidstudy.data.models.types.MBTIFeatures
 import org.sopt.androidstudy.db.Friend
 import org.sopt.androidstudy.db.FriendDAO
 
-class FriendLocalDataSource(private val dao: FriendDAO) {
+class FriendLocalDataSource(val dao: FriendDAO) {
 
     val friends = dao.getAllFriends()
 

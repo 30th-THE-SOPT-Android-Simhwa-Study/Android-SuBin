@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudy">
         <activity
-            android:name=".presentation.friend.screens.FriendDetailActivity"
-            android:exported="false" />
-        <activity
             android:name=".presentation.home.screens.HomeActivity"
             android:exported="false" />
         <activity
