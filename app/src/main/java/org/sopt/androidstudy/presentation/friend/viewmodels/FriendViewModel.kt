@@ -2,9 +2,11 @@ package org.sopt.androidstudy.presentation.friend.viewmodels
 
 import androidx.lifecycle.*
 import kotlinx.coroutines.launch
+import org.sopt.androidstudy.data.models.types.MBTI
 import org.sopt.androidstudy.db.Event
 import org.sopt.androidstudy.db.Friend
 import org.sopt.androidstudy.db.FriendRepository
+import org.sopt.androidstudy.util.safeValueOf
 
 class FriendViewModel(private val repository: FriendRepository) : ViewModel() {
 
@@ -13,6 +15,8 @@ class FriendViewModel(private val repository: FriendRepository) : ViewModel() {
     val position = MutableLiveData<Int?>()
     val inputName = MutableLiveData<String?>()
     val inputEmail = MutableLiveData<String?>()
+    val inputMbti = MutableLiveData<String?>()
+
 
     val saveOrUpdateButtonText = MutableLiveData<String>()
     val clearAllOrDeleteButtonText = MutableLiveData<String>()
@@ -29,8 +33,9 @@ class FriendViewModel(private val repository: FriendRepository) : ViewModel() {
         if (!inputName.value.isNullOrBlank() && !inputEmail.value.isNullOrBlank()) {
             val name = inputName.value!!
             val email = inputEmail.value!!
+            val mbti = inputMbti.value!!
             if (position.value == null) {
-                insert(Friend(0, name, email))
+                insert(Friend(0, name, email,safeValueOf<MBTI>(mbti.uppercase()).toString()))
             }
         }
     }
@@ -79,5 +84,6 @@ class FriendViewModel(private val repository: FriendRepository) : ViewModel() {
         position.value = null
         inputName.value = null
         inputEmail.value = null
+        inputMbti.value = null
     }
 }

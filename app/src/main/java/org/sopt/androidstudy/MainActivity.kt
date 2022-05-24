@@ -15,33 +15,27 @@ import org.sopt.androidstudy.presentation.friend.viewmodels.FriendViewModel
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var friendViewModel: FriendViewModel
-
     private var friendRecyclerViewAdapter = FriendRecyclerViewAdapter()
+
+    private val friendViewModel: FriendViewModel by lazy {
+        val dao = FriendDatabase.getInstance(application).friendDAO
+        val repositoryImpl = FriendRepositoryImpl(FriendLocalDataSource(dao))
+        ViewModelProvider(this, FriendViewModelFactory(repositoryImpl))[FriendViewModel::class.java]
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding.viewModel = friendViewModel
+        binding.lifecycleOwner = this
 
-
-        initSetting()
         initAdapter()
         displayFriendsList()
     }
 
-    private fun initSetting() {
-        val dao = FriendDatabase.getInstance(application).friendDAO
-        val repository = FriendRepository(dao)
-        val friendViewModelFactory = FriendViewModelFactory(repository)
-        friendViewModel =
-            ViewModelProvider(this, friendViewModelFactory)[FriendViewModel::class.java]
-    }
 
     private fun initAdapter() {
         binding.mainRcv.layoutManager = LinearLayoutManager(this)
-        binding.viewModel = friendViewModel
-        binding.lifecycleOwner = this
-
         binding.mainRcv.adapter = friendRecyclerViewAdapter
 
         friendViewModel.showToast.observe(this, Observer {
@@ -52,21 +46,21 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-//    //필요없을듯,,!
-//    private fun itemClickEvent() {
-//        friendRecyclerViewAdapter.setItemClickListener(object :
-//            FriendRecyclerViewAdapter.OnItemClickListener {
-//            override fun onClick(view: View, position: Int) {
-//                val name = friendRecyclerViewAdapter.currentList[position].name
-//                val email = friendRecyclerViewAdapter.currentList[position].email
-//            }
-//
-//        })
-//    }
+    //아이템클릭!
+    private fun itemClickEvent() {
+        friendRecyclerViewAdapter.setItemClickListener(object :
+            FriendRecyclerViewAdapter.OnItemClickListener {
+            override fun onClick(view: View, position: Int) {
+                val name = friendRecyclerViewAdapter.currentList[position].name
+                val email = friendRecyclerViewAdapter.currentList[position].email
+            }
+
+        })
+    }
 
     private fun displayFriendsList() {
         friendViewModel.friends.observe(this) {
-            friendRecyclerViewAdapter.submitList(it)
+            friendRecyclerViewAdapter.submitList((it.toMutableList()))
         }
     }
 }
